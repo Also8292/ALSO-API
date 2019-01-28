@@ -1,0 +1,61 @@
+easy_admin:
+
+  site_name: 'ALSO'
+
+  design:
+    brand_color: '#222222'
+    # assets:
+    #   css:
+    #     - 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css'
+
+  entities:
+    # List the entity class name you want to manage
+    
+    Projects:
+      class: 'App\Entity\Projects'
+      list:
+        fields:
+          - 'title'
+          - 'duree'
+          - 'description'
+          - { property: 'image', type: 'image', base_path: '/uploads/images/projects' }
+
+      show:
+        fields:
+          - { property: 'image', type: 'image', base_path: '/uploads/images/projects' }
+
+      form:
+        fields:
+          - 'title'
+          - 'duree'
+          - { property: 'description', type: 'fos_ckeditor' }
+          - { property: 'imageFile', type: 'file' }
+
+    
+    Articles:
+      class: 'App\Entity\Articles'
+      list:
+        fields:
+          - 'title'
+          - 'date_publication'
+          - 'categorie'
+          - 'content'
+          - { property: 'image', type: 'image', base_path: '/uploads/images/articles' }
+
+      show:
+        fields:
+          - { property: 'image', type: 'image', base_path: '/uploads/images/articles' }
+          
+      form:
+        fields:
+          - 'title'
+          - 'date_publication'
+          - 'categorie'
+          - { property: 'content', type: 'fos_ckeditor' }
+          - { property: 'imageFile', type: 'file' }
+
+    Categories:
+      class: 'App\Entity\Categories'
+      list:
+        fields:
+          - 'name'
