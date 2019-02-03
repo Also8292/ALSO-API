@@ -2,10 +2,35 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}ALSO{% endblock %}</title>
+        <link href="images/logo.png" rel="icon" type="image/png"/>
+
+        {% block stylesheets %}
+           
+            {# <link href="lib/animate/animate.css" rel="stylesheet" type="text/css">
+            <link href="lib/css-hamburgers/hamburgers.min.css" rel="stylesheet" type="text/css">
+            <link href="lib/animsition/css/animsition.min.css" rel="stylesheet" type="text/css">
+            <link href="lib/select2/select2.min.css" rel="stylesheet" type="text/css">
+            <link href="lib/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css"> #}
+                    
+        {% endblock %}
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+    
     </head>
     <body>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/admin">Admin</a>
+                </li>
+                <li>
+                    <a href="/api">API</a>
+                </li>
+            </ul>
+        </nav>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
